@@ -14,7 +14,7 @@ window.onload = function () {
     var bordModel = [];    // bevat een array symbolen ['N','N','G','N','R']: 5 velden, 3 neutrale, 1 groene en 1 rode
     var spelersModel = []; // bevat een Array met de posities van de aapjes, bijv. [0,2,4]
 
-    var audio = new Audio('sfx/shake_dice.mp3');
+    //var audio = new Audio('sfx/shake_dice.mp3');
 
     /* hulpfunctie move() verzorgt de verplaatsing van pion met index speler, dat wordt gerepresenteerd door aapje
        spelerImg
@@ -38,9 +38,9 @@ window.onload = function () {
     function rolls(){
         dobbelsteenImg.src = './images/'+dobbelsteen.getImg();
 
-        audio.pause();
-        audio.currentTime = 0;
-        audio.play();
+        //audio.pause();
+        //audio.currentTime = 0;
+        //audio.play();
 
     }
 
