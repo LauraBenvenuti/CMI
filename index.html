@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Spel bij cursus Inleiding Programmeren, CMD Amsterdam" />
+    <!-- bij versie 12: Progressive Enhancement -->
+
+    <title>CodeMonkeyIsland</title>
+    <link rel="shortcut icon" type="image/png" href="./images/favicon.png" />
+</head>
+
+<body>
+    <main>
+        <h1>Code Monkey Island</h1>
+
+        <aside>
+
+            <!-- h2 was h1 -->
+            <h2>Regels:</h2>
+            <dl>
+                <dt class="forward">Groen veld</dt>
+                <dd>= 1 stap vooruit</dd>
+                <dt class="back">Rood veld</dt>
+                <dd>= 2 stappen achteruit</dd>
+                <dt class="neutral">Neutraal veld</dt>
+                <dd>= geen invloed</dd>
+            </dl>
+
+        </aside>
+
+        <section class="feedback">
+            <h2>Feedback:</h2>
+            <p id="resultaat"></p>
+            <p>Werp de dobbelsteen.</p>
+
+            <figure>
+                <img src="./images/one.png" alt="dobbelsteen" />
+            </figure>
+
+        </section>
+
+
+        <section class="bord">
+
+            <img src="./images/teleporter.gif" class="teleporter start" alt="teleporter" />
+
+            <section class="pawns">
+                <img src="./images/chimp.png" alt="speler 1" id="speler1" />
+                <img src="./images/gorilla.png" alt="speler 2" id="speler2" />
+                <img src="./images/oranutang.png" alt="speler 3" id="speler3" />
+            </section>
+
+            <ul class="fields">
+
+            </ul>
+
+            <img src="./images/teleporter.gif" class="teleporter finish" alt="teleporter" />
+
+        </section>
+
+
+    </main>
+
+    <script src="./js/Dobbelsteen.js"></script>
+    <script src="./js/CMI.js"></script>
+    <script src="./js/Controller.js"></script>
+
+</body>
+
+</html>
