@@ -7,14 +7,23 @@
 window.onload = function () {
     'use strict';
 
-    var game, dobbelsteen, dobbelsteenImg, breedte, haltes;
-    var spelersView = []; //bevat de elementen van de DOM-tree die de aapjes representeren
-    var bordView = document.querySelector(".fields");
-    
-    var bordModel = [];    // bevat een array symbolen ['N','N','G','N','R']: 5 velden, 3 neutrale, 1 groene en 1 rode
-    var spelersModel = []; // bevat een Array met de posities van de aapjes, bijv. [0,2,4]
+    /* 
+    const game = new CMI(3,15); dit zou kunnen, maar ik vind het meer logisch om de game onder in aan te maken en te initialiseren. 
+    Hetzelfde geldt voor de Dobbelsteen.
+    */
+    const audio = new Audio('sfx/shake_dice.mp3');
 
-    var audio = new Audio('sfx/shake_dice.mp3');
+    const bordView = document.querySelector(".fields");
+    const regelsView = document.querySelector("aside");
+    
+    let game, dobbelsteen, dobbelsteenImg, breedte, haltes;
+
+    let spelersView = []; //bevat de elementen van de DOM-tree die de aapjes representeren
+    
+    let bordModel = [];    // bevat een array symbolen ['N','N','G','N','R']: 5 velden, 3 neutrale, 1 groene en 1 rode
+    let spelersModel = []; // bevat een Array met de posities van de aapjes, bijv. [0,2,4]
+    
+    
 
     /* hulpfunctie move() verzorgt de verplaatsing van pion met index speler, dat wordt gerepresenteerd door aapje
        spelerImg
@@ -74,7 +83,6 @@ window.onload = function () {
 
     /* functie initBord() bouwt de weergave van het bord op */
     function initBord () {
-        let regelsView = document.querySelector("aside");
         let veldView;
 
         for (let i = 0; i < bordModel.length; i++) {
@@ -109,9 +117,8 @@ window.onload = function () {
 
     }
 
+    // Hier wordt een spel aangemaaakt met 3 pionnen en 15 velden. De velden van de game worden random gevuld door game.init()
     game = new CMI(3,15);
- 
-    // Hier wordt een spel aangemaaakt met 3 pionnen en 15 velden. De velden worden random gevuld door game.init()
     game.init();
 
     bordModel = game.getBord();
