@@ -9,7 +9,7 @@ window.onload = function () {
 
     var game, dobbelsteen, dobbelsteenImg, breedte, haltes;
     var spelersView = []; //bevat de elementen van de DOM-tree die de aapjes representeren
-    var bordView = document.querySelector(".fields");
+    var bordView = document.querySelector(".bord ul");
     
     var bordModel = [];    // bevat een array symbolen ['N','N','G','N','R']: 5 velden, 3 neutrale, 1 groene en 1 rode
     var spelersModel = []; // bevat een Array met de posities van de aapjes, bijv. [0,2,4]
@@ -83,18 +83,20 @@ window.onload = function () {
 
             if (bordModel[i] == 'N'){
                 veldView.className='neutraal';
-                veldView.textContent = '-';
+                // veldView.textContent = '-';
             }
 
             else if (bordModel[i] == 'G') {
                 veldView.className = 'groen';
-                veldView.textContent = 'G';
+                // veldView.textContent = 'G';
             }
 
             else {
                 veldView.className='rood';
-                veldView.textContent = 'R';
+                // veldView.textContent = 'R';
             }
+
+            veldView.textContent = "" + i;
 
             breedte = Math.floor((window.innerWidth-30) / bordModel.length);
 
@@ -129,7 +131,7 @@ window.onload = function () {
     dobbelsteen = new Dobbelsteen();
     dobbelsteen.setImg();
 
-    dobbelsteenImg = document.querySelector("figure img");
+    dobbelsteenImg = document.querySelector("main>img");
     dobbelsteenImg.src = './images/'+dobbelsteen.getImg();
 
     // // de dobbelsteen wordt gekoppeld aan eventhandler werpDobbelsteen
